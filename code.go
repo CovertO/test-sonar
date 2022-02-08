@@ -104,3 +104,24 @@ func function5(b int) int {
 
 	return a
 }
+
+func function6(b int) int {
+	a := 1
+
+	switch b {
+	case 1:
+		{
+			a = a + b
+		}
+	case 2:
+		{
+			a = a + b
+		}
+	default:
+		{
+			a = b
+		}
+	}
+
+	return a
+}
