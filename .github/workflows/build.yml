@@ -51,7 +51,7 @@ jobs:
         env:
           TOKEN: ${{ steps.generate_token.outputs.token }}
         run: |
-          go env -w GOPRIVATE=github.com/CovertO/TestInternal/
-          git config --global url.https://$TOKEN@github.com/.insteadOf https://github.com/
+          go env -w GOPRIVATE=github.com/CovertO/TestInternal
+          git config --global url.https://x-access-token:$TOKEN@github.com/.insteadOf https://github.com/
           cat ~/.gitconfig
           go mod vendor
