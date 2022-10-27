@@ -43,6 +43,7 @@ jobs:
           repository: CovertO/TestInternal
           fetch-depth: 0
           path: test-checkout-internal
+          token: ${{ steps.generate_token.outputs.token }}
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
