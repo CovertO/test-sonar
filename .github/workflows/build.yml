@@ -33,17 +33,6 @@ jobs:
 
           # Optional.
           # repository: owner/repo
-      - name: Use token
-        env:
-          TOKEN: ${{ steps.generate_token.outputs.token }}
-        run: |
-          echo "The generated token is masked: ${TOKEN}"
-      - uses: actions/checkout@v3
-        with:
-          repository: CovertO/TestInternal
-          fetch-depth: 0
-          path: test-checkout-internal
-          token: ${{ steps.generate_token.outputs.token }}
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -56,3 +45,4 @@ jobs:
           cat ~/.gitconfig
           go mod vendor
           ls -al vendor/github.com
+          make test
