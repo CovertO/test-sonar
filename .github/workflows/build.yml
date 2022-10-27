@@ -53,11 +53,5 @@ jobs:
         run: |
           go env -w GOPRIVATE=github.com/CovertO/TestInternal/
           git config --global url.https://$TOKEN@github.com/.insteadOf https://github.com/
+          cat ~/.gitconfig
           go mod vendor
-      - name: Generate test coverage
-        run: |
-          make generate-test-coverage
-      - uses: sonarsource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
