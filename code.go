@@ -1,5 +1,9 @@
 package testsonar
 
+import "github.com/CovertO/TestInternal"
+
+var abc = TestInternal.ABC{}
+
 func function1(b int) int {
 	a := 1
 
