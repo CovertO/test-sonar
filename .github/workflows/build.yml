@@ -42,7 +42,4 @@ jobs:
         run: |
           go env -w GOPRIVATE=github.com/CovertO/TestInternal
           git config --global url.https://x-access-token:$TOKEN@github.com/.insteadOf https://github.com/
-          cat ~/.gitconfig
-          go mod vendor
-          ls -al vendor/github.com
           make test
